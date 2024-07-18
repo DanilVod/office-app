@@ -25,7 +25,7 @@
     "packages/*"
   ],
   "lint-staged": {
-    "apps/**/**/*.{js,jsx,ts,tsx}": [
+    "apps/next-app/src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ],
