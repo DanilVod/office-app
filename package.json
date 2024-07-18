@@ -5,9 +5,13 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "test": "turbo test",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.1",
+    "lint-staged": "^15.2.7",
     "prettier": "^3.2.5",
     "turbo": "^2.0.7",
     "typescript": "^5.4.5"
@@ -19,5 +23,10 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "lint-staged": {
+    "apps/**/*.{js,jsx,ts,tsx}": ["eslint --fix"],
+    "packages/ui/**/*.{js,jsx,ts,tsx}": ["eslint --fix"],
+    "*.json": ["prettier --write"]
+  }
 }
